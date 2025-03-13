@@ -1,0 +1,72 @@
+ody {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eaf7ea; /* Verde claro */
+    color: #2e7d32;
+    text-align: center;
+}
+
+/* Tela de boas-vindas */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://i.pinimg.com/736x/f1/20/4a/f1204a2480562af983c840bab52ba55d.jpg') no-repeat center center/cover;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Sobreposição para legibilidade */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Texto principal */
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.welcome-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Botão de entrada */
+.welcome-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.welcome-button:hover {
+    background-color: #388e3c;
+}
+
+/* Animação */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
