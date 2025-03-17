@@ -1,14 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var acc = document.querySelectorAll(".accordion");
-    
-    acc.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
+    const accordions = document.querySelectorAll(".accordion");
+
+    accordions.forEach((accordion) => {
+        accordion.addEventListener("click", function () {
+            this.classList.toggle("ativo");
+
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
             } else {
-                panel.style.display = "block";
+                panel.style.maxHeight = panel.scrollHeight + "px";
             }
         });
     });
