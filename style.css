@@ -1,29 +1,27 @@
-body, h1, h2, ul, li, p, dd, dt, dl {
-    margin: 0px;
-    padding: 0px;
+body {
+    background: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+    font-family: Arial, sans-serif;
 }
 
+/* Imagens */
 img {
     display: block;
     max-width: 100%;
 }
 
+/* Listas */
 ul {
     list-style: none;
 }
 
-body {
-    background: #ffffff;
-    color: #000000;
-    -webkit-font-smoothing:antialiased;
-    display: grid;
-    grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
-}
-
+/* Menu de Navegação */
 .menu {
     grid-column: 3/5;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     background: #92e37c;
 }
 
@@ -39,25 +37,32 @@ body {
     margin-right: 10px;
     color: #ffffff;
     text-decoration: none;
-    font-family:'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.875rem;
     letter-spacing: .1rem;
+    transition: 0.3s;
 }
 
+.menu li a:hover {
+    background-color: #7ac46a;
+}
+
+/* Layout Principal */
 .grid-section {
     grid-column: 2 / 4;
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 20px;
     display: grid;
     grid-template-columns: 90px 300px 1fr;
-    grid-gap: 20px
+    grid-gap: 20px;
 }
 
+/* Título Principal */
 .titulo {
-    font-family: Georgia;
+    font-family: Georgia, serif;
     font-size: 6rem;
     line-height: 1;
     font-weight: 400;
@@ -65,7 +70,8 @@ body {
     grid-column: 1 / 4;
 }
 
-.animais h2::before{
+/* Seção de Animais */
+.animais h2::before {
     content: '';
     display: inline-block;
     width: 40px;
@@ -74,118 +80,104 @@ body {
     background: #92e37c;
 }
 
-.animais p{
-    font-family: Helvetica, arial;
+.animais p {
+    font-family: Helvetica, Arial, sans-serif;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-.animais-lista{ 
-    height: 370px;
+.animais-lista {
+    height: 500px;
     overflow-y: scroll;
     grid-column: 2;
+    padding-right: 10px;
 }
 
-.animais-lista li {
-    cursor: pointer;
+/* Barra de rolagem personalizada */
+.animais-lista::-webkit-scrollbar {
+    width: 10px;
 }
 
-
-.animais-lista::-webkit-scrollbar{
-    width: 18px;
-}
-
-.animais-lista::-webkit-scrollbar-thumb{
+.animais-lista::-webkit-scrollbar-thumb {
     background: #92e37c;
-    border-left: 4px solid #faf6ed;
-    border-right: 4px solid #faf6ed;
+    border-radius: 5px;
 }
 
-.animais-lista::-webkit-scrollbar-track{
-    background:#faf6ed;
+.animais-lista::-webkit-scrollbar-track {
+    background: #f0f0f0;
 }
 
-.animais-descricao{
+.animais-descricao {
     grid-column: 3;
 }
-.animais-descricao section{
+
+.animais-descricao section {
     margin-bottom: 3rem;
 }
 
-.faq-lista dt{
+/* FAQ */
+.faq-lista dt {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: bold;
     margin-top: 2rem;
-    margin-bottom:.5rem;
-    color:#E54
+    margin-bottom: .5rem;
+    color: #2C5E1A;
 }
 
-.faq-lista dt::before{
+.faq-lista dt::before {
     content: '';
     display: inline-block;
     width: 20px;
     height: 10px;
     margin-right: 10px;
-    background: #fb5;
-    grid-column: 2/4;
+    background: #2C5E1A;
 }
 
-.faq-lista dd{
-    font-family: Helvetica, arial;
+.faq-lista dd {
+    font-family: Helvetica, Arial, sans-serif;
     margin-bottom: .5rem;
     margin-left: 30px;
 }
 
-.mapa{
-    grid-column: 2;
+/* Seções Contato e Projetos */
+.mapa, .dados {
+    grid-column: 2 / 4;
 }
 
-.dados{
-    grid-column: 3;
-}
-
-.dados li{ 
+.dados li {
     margin-bottom: 1rem;
-    font-family: Helvetica, arial;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-.dados li ::before{
+.dados li::before {
     content: '';
     display: inline-block;
-    width:20px;
-    height:10px;
-    margin-right:10px;
-    background: #fb5;
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+    background: #92e37c;
 }
 
-.copy{ 
-    grid-column: 3/5;
+/* Rodapé */
+.copy {
+    grid-column: 3 / 5;
     margin-bottom: 2rem;
-    background: #fb5;
+    background: #92e37c;
+    text-align: center;
 }
 
-.copy p{
-    padding:20px;
+.copy p {
+    padding: 20px;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: bold;
+    color: #ffffff;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    display: inline-block;
-    margin: 5px;
-}
-
-/* Transformando <a> em um botão */
+/* Botões */
 li a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: 	#90EE90; /* Cor azul */
+    background-color: #90EE90;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -197,62 +189,57 @@ li a {
 }
 
 li a:hover {
-    background-color:#98FB98; 
+    background-color: #7ac46a;
 }
 
-
-@media (max-width: 700px )  {
-    body{
+/* Responsividade */
+@media (max-width: 700px) {
+    body {
         grid-template-columns: 1fr;
-    
     }
 
-    .menu,.grid-section, .copy{
-        grid-template-columns: 1;
-    }
-
-    .grid-section{
-        grid-template-columns: 100px;
-        grid-gap:10px;
-    }
-
-    .animais-lista{
+    .menu, .grid-section, .copy {
         grid-column: 1;
     }
 
-    .faq-lista,.dados,.mapa{
-        grid-column: 1/3;
+    .grid-section {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
     }
 
-    .grid-section h1{
+    .animais-lista, .faq-lista, .dados, .mapa {
+        grid-column: 1 / 3;
+    }
+
+    .grid-section h1 {
         font-size: 3rem;
     }
 
-    .menu{
-        margin-top:0px;
+    .menu {
+        margin-top: 0;
     }
 
-    .copy{
-        margin-bottom: 0px;
+    .copy {
+        margin-bottom: 0;
     }
-
 }
 
+/* Animação para seções ativas */
 .js .js-tabcontent section {
-    display:none;
+    display: none;
 }
 
-.js-tabcontent section.ativo{
+.js-tabcontent section.ativo {
     display: block !important;
     animation: show .5s forwards;
 }
 
 @keyframes show {
-    from{
+    from {
         opacity: 0;
         transform: translate3d(-30px, 0, 0);
     }
-    to{
+    to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
