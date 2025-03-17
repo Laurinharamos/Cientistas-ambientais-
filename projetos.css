@@ -1,0 +1,133 @@
+/* Reset Padrão */
+body, h1, h2, ul, li, p, dd, dt, dl {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Estilos Gerais */
+body {
+    background: #faf6ed;
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 20px;
+}
+
+/* CONTAINER PRINCIPAL */
+.js-tabcontent {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* PAINEL DE TEXTO */
+.panel {
+    background: #fff;
+    border-left: 5px solid #A7E5A1;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.panel p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* BOTÕES DE ACORDEÃO */
+.accordion {
+    background-color: #A7E5A1;
+    color: #222;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.accordion:hover {
+    background-color: #8CC98B;
+}
+
+.accordion:after {
+    content: '\25BC';
+    font-size: 1rem;
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.accordion.active:after {
+    transform: rotate(180deg);
+}
+
+/* PAINÉIS DOS PROJETOS */
+.panel {
+    display: none;
+    padding: 15px;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.panel ul {
+    padding-left: 20px;
+}
+
+.panel ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.panel ul li strong {
+    color: #2C5E1A;
+}
+
+/* Animação de exibição */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 700px) {
+    body {
+        padding: 10px;
+    }
+
+    .js-tabcontent {
+        width: 100%;
+    }
+
+    .accordion {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .panel {
+        padding: 12px;
+    }
+}
