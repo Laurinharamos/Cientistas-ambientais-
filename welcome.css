@@ -1,10 +1,14 @@
-ody {
+.ody {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
     background-color: #eaf7ea; /* Verde claro */
     color: #2e7d32;
     text-align: center;
+}
+
+#saudacao{
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 /* Tela de boas-vindas */
